@@ -47,6 +47,15 @@ public class PlayerMovement : MonoBehaviour {
             
         }
 
+        if (Input.GetKeyDown(KeyCode.W) == true)
+        {
+            isJumpPressed = true;
+            animator.SetTrigger("DoJump");
+
+        }
+
+
+
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         animator.SetBool("IsHurt", isHurt);
