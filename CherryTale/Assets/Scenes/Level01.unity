@@ -32034,6 +32034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8038916247474687628, guid: 2e2293ba3e0b3c147b27ef8f55af24a8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8038916247474687629, guid: 2e2293ba3e0b3c147b27ef8f55af24a8, type: 3}
       propertyPath: point1
       value: 
@@ -32123,5 +32127,9 @@ PrefabInstance:
       propertyPath: playerPowerUpEndAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: c2294f5d29637f84eb289b07089ecbc8, type: 3}
+    - target: {fileID: 8792537076025595615, guid: 5f8a33626f25f0b4098e679fe80d539e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8a33626f25f0b4098e679fe80d539e, type: 3}
