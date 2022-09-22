@@ -846,6 +846,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1984619376}
     m_Modifications:
+    - target: {fileID: 4949026867188151467, guid: b7d77788344c4f648b884d85e55260ab, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1434442992}
     - target: {fileID: 4949026867188151468, guid: b7d77788344c4f648b884d85e55260ab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -80582,7 +80586,7 @@ GameObject:
   - component: {fileID: 1331780406}
   m_Layer: 3
   m_Name: GroundCollider (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80659,6 +80663,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1434442992 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2039931328, guid: b7d77788344c4f648b884d85e55260ab, type: 3}
+  m_PrefabInstance: {fileID: 402786814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1435855844
 GameObject:
   m_ObjectHideFlags: 0
@@ -101657,7 +101666,7 @@ GameObject:
   - component: {fileID: 2001048343}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101777,7 +101786,7 @@ GameObject:
   - component: {fileID: 2006733464}
   m_Layer: 3
   m_Name: GroundCollider (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102615,6 +102624,10 @@ PrefabInstance:
     - target: {fileID: 8792537076025595612, guid: 5f8a33626f25f0b4098e679fe80d539e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792537076025595613, guid: 5f8a33626f25f0b4098e679fe80d539e, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8792537076025595615, guid: 5f8a33626f25f0b4098e679fe80d539e, type: 3}
       propertyPath: m_FlipX
