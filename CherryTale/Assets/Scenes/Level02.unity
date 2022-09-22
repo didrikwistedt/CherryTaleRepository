@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &296312101
 Transform:
   m_ObjectHideFlags: 0
@@ -80334,7 +80334,7 @@ GameObject:
   - component: {fileID: 1331780406}
   m_Layer: 3
   m_Name: GroundCollider (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101234,7 +101234,7 @@ GameObject:
   - component: {fileID: 2001048343}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101270,7 +101270,7 @@ GameObject:
   - component: {fileID: 2006733464}
   m_Layer: 3
   m_Name: GroundCollider (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
