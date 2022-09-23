@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour {
     private Animator animator;
     public GameObject groundCheck;
 
-    private bool isGrounded;
+    public bool isGrounded;
 
     public float movementSpeed = 2f;
-    private float defaultMovementSpeed;
+    public float defaultMovementSpeed;
     private float moveDirection = 0f;
     public float jumpForce = 10f;
     private bool isFacingLeft;
-    private bool isJumpPressed = false;
+    public bool isJumpPressed = false;
     private Vector3 velocity;
     public float smoothTime = 0.2f;
     public bool isHurt = false;
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour {
   
 
 
-    private void Move(Vector3 movement, bool isJumpPressed)
+    public void Move(Vector3 movement, bool isJumpPressed)
     {
         //WallJumping börjar här :)
         //Översättning för nedanför: "Om man hoppar = spelar ljud: om man dessutom hoppar och är på marken = åker uppåt; om man dessutom hoppar och är på en vägg = får en knuff uppåt och åt motsatt direction. Om man är på en vägg men inte hoppar = faller neråt."

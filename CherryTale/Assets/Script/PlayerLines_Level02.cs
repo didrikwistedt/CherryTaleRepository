@@ -49,8 +49,8 @@ public class PlayerLines_Level02 : MonoBehaviour
     {
         gameObject.transform.Find("StartPlayerLine3").GetComponent<Text>().enabled = false;
         gameObject.transform.parent.GetComponent<PlayerMovement>().enabled = true;
-        playerTalkAudioSource.loop = true;
         playerTalkAudioSource.PlayOneShot(level2MusicAudioClip);
+        playerTalkAudioSource.loop = true;
     }
 
 
