@@ -8,7 +8,7 @@ public class ElevatorConstrain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.GetComponent<ElevatorMovement>().enabled = false;
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class ElevatorConstrain : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
             collision.gameObject.transform.SetParent(gameObject.transform);
+            gameObject.GetComponent<ElevatorMovement>().enabled = true;
         }
 
     }
