@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour {
     private Animator animator;
     public GameObject groundCheck;
 
-    private bool isGrounded;
+    public bool isGrounded;
 
     public float movementSpeed = 2f;
     private float defaultMovementSpeed;
     private float moveDirection = 0f;
     public float jumpForce = 10f;
     private bool isFacingLeft;
-    private bool isJumpPressed = false;
+    public bool isJumpPressed = false;
     private Vector3 velocity;
     public float smoothTime = 0.2f;
     public bool isHurt = false;
