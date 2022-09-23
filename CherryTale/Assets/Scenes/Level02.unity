@@ -3259,7 +3259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474306754
 GameObject:
@@ -82441,6 +82441,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 991361063, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 991361063, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4055705975477435512, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
       propertyPath: m_Name
       value: CheckpointPrefab (2)
@@ -89564,6 +89572,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 369403905, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 991361063, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 991361063, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4055705975477435512, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
       propertyPath: m_Name
       value: CheckpointPrefab (1)
@@ -89611,6 +89631,22 @@ PrefabInstance:
     - target: {fileID: 4055705975477435513, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055705975559487082, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055705976048233106, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055705976048233106, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055705976048233107, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63eaa3bfe6789654da06c56f739e17d1, type: 3}
