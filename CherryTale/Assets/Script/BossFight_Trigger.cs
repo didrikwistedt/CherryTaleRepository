@@ -19,6 +19,7 @@ public class BossFight_Trigger : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerMovement>().movementSpeed = 0f;
             GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = true;
+            GameObject.Find("Level02Music").GetComponent<AudioSource>().enabled = false;
             Invoke("BossFightPlayerLineTrigger", 0.5f);
         }
     }
