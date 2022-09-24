@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossFight_BossState : MonoBehaviour
 {
@@ -44,14 +45,15 @@ public class BossFight_BossState : MonoBehaviour
     public void CompleteBoss()
     {
         GameObject.Find("BossFightMusic").GetComponent<AudioSource>().enabled = false;
+        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().movementSpeed = 0f;
+        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = true;
         bossHurtAudioSource.PlayOneShot(bossVictoryAudioClip);
-        Invoke("DestroySprite", 2.7f);
+        Invoke("EndScreenTrigger", 5f);
     }
 
-    public void DestroySprite()
+    public void EndScreenTrigger()
     {
-        Destroy(gameObject);
-        
+        SceneManager.LoadScene(3);
     }
 
 }

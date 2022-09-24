@@ -22,7 +22,13 @@ public class PlayerCheckpoint : MonoBehaviour
             collision.GetComponent<PlayerState>().ChangeRespawnPosition(gameObject);
             CheckpointTaken.SetActive(true);
             CheckpointAudioSource.PlayOneShot(CheckpointTakenAudioClip);
-            
+            Invoke("InactivateAudio", 0.7f);
         }
     }
+
+    public void InactivateAudio()
+    {
+        CheckpointAudioSource.enabled = false;
+    }
+
 }
