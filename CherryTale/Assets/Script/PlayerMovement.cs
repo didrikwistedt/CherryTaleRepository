@@ -104,13 +104,15 @@ public class PlayerMovement : MonoBehaviour {
         //Översättning för nedanför: "Om man hoppar = spelar ljud: om man dessutom hoppar och är på marken = åker uppåt; om man dessutom hoppar och är på en vägg = får en knuff uppåt och åt motsatt direction. Om man är på en vägg men inte hoppar = faller neråt."
 
         if (isJumpPressed) {
-            playerAudioSource.PlayOneShot(playerJumpAudioClip);
+            
 
             if (isGrounded) {
                 rigidBody2D.AddForce(new Vector2(0f, jumpForce));
-                
+                playerAudioSource.PlayOneShot(playerJumpAudioClip);
+
             } else if (onWall() == true) {
                 rigidBody2D.AddForce(new Vector2(-moveDirection* jumpForce*1.6f, jumpForce*1.4f));
+                playerAudioSource.PlayOneShot(playerJumpAudioClip);
             }
 
         } else if (onWall()){
@@ -146,13 +148,41 @@ public class PlayerMovement : MonoBehaviour {
         return false;
     }
 
-
-    public void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Enemy") == true) {
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyPlant") == true)
+        {
             isHurt = true;
             playerAudioSource.PlayOneShot(playerHurtAudioClip);
             Invoke("HurtAnimationEnd", 0.5f);
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Enemy") == true) 
+        {
+            if (isGrounded == true)
+            {
+                isHurt = true;
+                playerAudioSource.PlayOneShot(playerHurtAudioClip);
+                Invoke("HurtAnimationEnd", 0.5f);
+            }
+
+        }
+        else if (collision.gameObject.CompareTag("Boss") == true)
+        {
+            if (isGrounded == true)
+            {
+                Invoke("BossHurtAnimation", 0.5f);
+            }
+        }
+    }
+
+    public void BossHurtAnimation()
+    {
+        isHurt = true;
+        playerAudioSource.PlayOneShot(playerHurtAudioClip);
+        Invoke("HurtAnimationEnd", 0.5f);
     }
 
     public void HurtAnimationEnd() {
