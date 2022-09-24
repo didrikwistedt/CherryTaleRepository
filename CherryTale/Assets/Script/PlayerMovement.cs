@@ -108,15 +108,24 @@ public class PlayerMovement : MonoBehaviour {
         if (isJumpPressed) {
             
 
-            if (isGrounded) {
+            if (isGrounded) 
+            {
                 rigidBody2D.AddForce(new Vector2(0f, jumpForce));
                 playerAudioSource.PlayOneShot(playerJumpAudioClip);
+            } 
 
-            } else if (onWall() == true && completedWallJumpScenario == true) 
+            else if (onWall() == true && completedWallJumpScenario == true) 
             {
                 rigidBody2D.AddForce(new Vector2(-moveDirection* jumpForce*1.6f, jumpForce*1.4f));
                 playerAudioSource.PlayOneShot(playerJumpAudioClip);
+            } 
+
+            else if (onWall() ==true && completedWallJumpScenario == true && isFacingLeft == true)
+            {
+                rigidBody2D.AddForce(new Vector2(moveDirection * jumpForce * 1.6f, jumpForce * 1.4f));
+                playerAudioSource.PlayOneShot(playerJumpAudioClip);
             }
+
 
         } else if (onWall()){
             rigidBody2D.AddForce(new Vector2(0f, -20f));

@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Boss
   - EnemyPlant
+  - Wall
   layers:
   - Default
   - TransparentFX
