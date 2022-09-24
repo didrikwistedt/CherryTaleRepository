@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rigidBody2D;
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    public Animator animator;
     public GameObject groundCheck;
 
     public bool isGrounded;
-
+    public bool isInCutscene = false;
+    public bool completedWallJumpScenario = false;
     public float movementSpeed = 2f;
     public float defaultMovementSpeed;
-    private float moveDirection = 0f;
+    public float moveDirection = 0f;
     public float jumpForce = 10f;
     private bool isFacingLeft;
     public bool isJumpPressed = false;
@@ -61,6 +62,7 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         animator.SetBool("IsHurt", isHurt);
+        animator.SetBool("IsInCutscene", isInCutscene);
 
     }
 
@@ -110,7 +112,8 @@ public class PlayerMovement : MonoBehaviour {
                 rigidBody2D.AddForce(new Vector2(0f, jumpForce));
                 playerAudioSource.PlayOneShot(playerJumpAudioClip);
 
-            } else if (onWall() == true) {
+            } else if (onWall() == true && completedWallJumpScenario == true) 
+            {
                 rigidBody2D.AddForce(new Vector2(-moveDirection* jumpForce*1.6f, jumpForce*1.4f));
                 playerAudioSource.PlayOneShot(playerJumpAudioClip);
             }

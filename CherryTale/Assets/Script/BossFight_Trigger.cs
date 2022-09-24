@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BossFight_Trigger : MonoBehaviour
@@ -17,6 +18,7 @@ public class BossFight_Trigger : MonoBehaviour
         if (collision.CompareTag("Player") == true)
         {
             collision.gameObject.GetComponent<PlayerMovement>().movementSpeed = 0f;
+            GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = true;
             Invoke("BossFightPlayerLineTrigger", 0.5f);
         }
     }
@@ -53,6 +55,7 @@ public class BossFight_Trigger : MonoBehaviour
     {
         gameObject.transform.Find("Canvas").transform.Find("BossFightBossLine").GetComponent<Text>().enabled = false;
         GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().ResetMovementSpeed();
+        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = false;
         GameObject.Find("BossFightMusic").GetComponent<AudioSource>().enabled = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
