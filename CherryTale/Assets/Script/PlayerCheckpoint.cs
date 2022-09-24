@@ -22,7 +22,7 @@ public class PlayerCheckpoint : MonoBehaviour
             collision.GetComponent<PlayerState>().ChangeRespawnPosition(gameObject);
             CheckpointTaken.SetActive(true);
             CheckpointAudioSource.PlayOneShot(CheckpointTakenAudioClip);
-            print("I'm colliding with chekcpoint");
+            
         }
     }
 }
