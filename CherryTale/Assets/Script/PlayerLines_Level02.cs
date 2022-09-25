@@ -8,7 +8,6 @@ public class PlayerLines_Level02 : MonoBehaviour
 
     [SerializeField] private AudioSource playerTalkAudioSource;
     [SerializeField] private AudioClip playerTalkAudioClip;
-    [SerializeField] private AudioClip level2MusicAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -49,15 +48,7 @@ public class PlayerLines_Level02 : MonoBehaviour
     {
         gameObject.transform.Find("StartPlayerLine3").GetComponent<Text>().enabled = false;
         gameObject.transform.parent.GetComponent<PlayerMovement>().enabled = true;
-        playerTalkAudioSource.PlayOneShot(level2MusicAudioClip);
-        playerTalkAudioSource.loop = true;
+        GameObject.Find("Level02Music").GetComponent<AudioSource>().enabled = true;
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

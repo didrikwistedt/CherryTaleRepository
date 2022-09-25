@@ -31,7 +31,17 @@ public class Enemy_EagleDestroy : MonoBehaviour
 
     public void DestroyEnemy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Invoke("EagleRespawn", 10f);
     }
+
+    public void EagleRespawn()
+    {
+        isAlive = true;
+        gameObject.SetActive(true);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.GetComponent<ElevatorMovement>().speed = 2f;
+    }
+
 
 }

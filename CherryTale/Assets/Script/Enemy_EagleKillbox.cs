@@ -12,9 +12,18 @@ public class Enemy_EagleKillbox : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 1000f));
                 gameObject.GetComponentInParent<Enemy_EagleDestroy>().KillMe();
-                Destroy(gameObject);
+                
+                Invoke("RespawnEagle", 10f);
             }
         }
     }
+
+    public void RespawnEagle()
+    {
+        gameObject.GetComponentInParent<SpriteRenderer>().enabled = true;
+    }
+
+
+
 }
 

@@ -16,6 +16,8 @@ public class WallJumpUnlockScenario : MonoBehaviour
         if (collision.CompareTag("Player") == true)
         {
             collision.gameObject.GetComponent<PlayerMovement>().movementSpeed = 0f;
+            GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = true;
+            GameObject.Find("Level02Music").GetComponent<AudioSource>().enabled = false;
             Invoke("WallJumpPlayerLine1Trigger", 0.5f);
         }
     }
@@ -70,6 +72,7 @@ public class WallJumpUnlockScenario : MonoBehaviour
         gameObject.transform.Find("Canvas").transform.Find("WallJumpStatueLine2").GetComponent<Text>().enabled = false;
         gameObject.transform.Find("Canvas").transform.Find("WallJumpPlayerLine3").GetComponent<Text>().enabled = true;
         wallJumpScenarioAudioSource.PlayOneShot(wallJumpPlayerTalkClip);
+        GameObject.Find("PlayerFox").GetComponent<SpriteRenderer>().flipX = false;
         Invoke("WallJumpSmilingStatueLine3Trigger", 4f);
     }
 
@@ -78,7 +81,15 @@ public class WallJumpUnlockScenario : MonoBehaviour
         gameObject.transform.Find("Canvas").transform.Find("WallJumpPlayerLine3").GetComponent<Text>().enabled = false;
         gameObject.transform.Find("Canvas").transform.Find("WallJumpStatueLine3").GetComponent<Text>().enabled = true;
         wallJumpScenarioAudioSource.PlayOneShot(wallJumpStatueTalkClip);
+        GameObject.Find("PlayerFox").GetComponent<SpriteRenderer>().flipX = true;
+        Invoke("OrbAppear", 0.5f);
         Invoke("WallJumpPlayerLine4Trigger", 4f);
+    }
+
+    public void OrbAppear()
+    {
+        gameObject.transform.Find("Orb").GetComponent<WallJumpUnlockOrb>().OrbAppear();
+        gameObject.transform.Find("Orb2").GetComponent<WallJumpUnlockOrb>().OrbAppear();
     }
 
     public void WallJumpPlayerLine4Trigger()
@@ -93,8 +104,15 @@ public class WallJumpUnlockScenario : MonoBehaviour
     {
         gameObject.transform.Find("Canvas").transform.Find("WallJumpPlayerLine4").GetComponent<Text>().enabled = false;
         GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().ResetMovementSpeed();
+        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().isInCutscene = false;
+        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().completedWallJumpScenario = true;
         GameObject.Find("PlayerFox").GetComponent<SpriteRenderer>().flipX = false;
+        GameObject.Find("Level02Music").GetComponent<AudioSource>().enabled = true;
+        GameObject.Find("TutorialText").transform.Find("WallJumpTutorial1").GetComponent<Text>().enabled = true;
+        GameObject.Find("TutorialText").transform.Find("WallJumpTutorial2").GetComponent<Text>().enabled = true;
+        GameObject.Find("TutorialText").transform.Find("WallJumpTutorial3").GetComponent<Text>().enabled = true;
         Destroy(gameObject);
     }
+
 }
 
