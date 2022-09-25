@@ -9,13 +9,11 @@ public class PlayerLines_Level02 : MonoBehaviour
     [SerializeField] private AudioSource playerTalkAudioSource;
     [SerializeField] private AudioClip playerTalkAudioClip;
     [SerializeField] private AudioClip level2MusicAudioClip;
-    [SerializeField] private GameObject PlayerFox;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        //gameObject.transform.parent.GetComponent<PlayerMovement>().enabled = false;
+        gameObject.transform.parent.GetComponent<PlayerMovement>().enabled = false;
         Invoke("EnableStartPlayerLine1", 1f);
         gameObject.transform.parent.GetComponent<SpriteRenderer>().flipX = true;
         
